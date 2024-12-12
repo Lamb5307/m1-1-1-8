@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<META http-equiv="Content-Style-Type" content="text/css">
+<META name="GENERATOR" content="IBM WebSphere Studio Homepage Builder Version 13.0.0.0 for Windows">
+    <link rel="stylesheet" href="style.css">
+<TITLE>集合と論理演算</TITLE>
+</HEAD>
+<BODY>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<h1>【　集合と論理演算　】</h1>
+
+<p id="buttom"><strong>表示</strong></p><br>
+<p class="di"><b>｢集合｣</b></p>とは、ある明確な条件に基づきグループ化されたデータの集まりのことです。集合は<p class="di"><b>｢AまたはB｣</b></p>などの文章で表現できます。このような文章や条件式(論理式)を<p class="di"><b>｢命題｣</b></p>といいます。<br>
+代表的な集合は、次のような命題や<p class="di"><b>｢ベン図｣</b></p>で表現できます。<br>
+<P><IMG src="1-1-1-8-1.JPG" width="500" border="0"></P>
+
+このベン図を解釈するには、<p class="di"><b>｢真理値｣</b></p>を求めます。<p class="di"><b>｢真理値｣</b></p>とは、1ならば<p class="di"><b>｢真｣</b></p>を、0ならば<p class="di"><b>｢偽｣</b></p>を意味します。<br>
+例えば、Aに含まれBに含まれないならば、それぞれの真理値はA=1、B=0となります。<br>
+これを、命題<b>｢AまたはB｣</b>に当てはめた場合、<p class="di"><b>｢1または0｣</b></p>となり、命題倫理が成立します。しかし、命題<b>｢AかつB｣</b>に当てはめた場合は、<p class="di"><b>｢1かつ0｣</b></p>となり、命題論理は成立しません。<br>
+<strong>(1)論理演算と論理回路</strong><br>
+<p class="di"><b>｢論理演算｣</b></p>とは、複数の条件(論理)の組合わせを条件式で表したときの演算方法のことです。コンピュータ内部でも論理演算は行われ、論理演算を担当する電子回路を<p class="di"><b>｢論理回路｣</b></p>といいます。<br>
+論理回路は、<p class="di"><b>｢回路記号｣</b></p>を使って図で表現できます。回路記号は<p class="di"><b>｢MIL(ミル)記号｣</b></p>ともいいます。<br>
+<b>●基本的な論理演算</b><br>
+基本的な論理演算には、次なようなものがあります。<br>
+<P><IMG src="1-1-1-8-2.JPG" width="500" border="0"></P>
+
+<b>●組合わせの論理演算</b><br>
+基本的な論理演算を組み合わせて演算を行うことができます。<br>
+論理演算の組み合わせには、次のようなものがあります。
+<P><IMG src="1-1-1-8-3.JPG" width="500" border="0"></P>
+
+<strong>(2)半加算器と全加算器</strong><br>
+四則演算や論理演算を行う回路を<p class="di"><b>｢演算回路｣</b></p>といい、2進数の加算を行う演算回路を<p class="di"><b>｢加算器｣</b></p>といいます。<br>
+加算器には、<p class="di"><b>｢半加算器｣</b></p>と<p class="di"><b>｢全加算器｣</b></p>があります。<br>
+<b>●半加算器</b><br>
+<p class="di"><b>｢半加算器｣</b></p>とは、2進数の加算で下位の桁から桁上がりを考慮しない加算器のことです。<br>
+X、Yが入力値で、C、Sが出力値の場合、Sはその桁の演算結果の1桁目、Cは次の位への桁上りとなります。CはX、Yがともに1のとき桁上りが発生して1になるので論理積に、SはX,Yがともに異なるとき1になるので排他的論理和になります。<br>
+したがって、全加算器は論理積と排他的論理和の回路の組み合わせで構成されます。<br>
+<P><IMG src="1-1-1-8-4.JPG" width="500" border="0"></P>
+
+<b>●全加算器</b><br>
+<p class="di"><b>｢全加算器｣</b></p>とは、2進数の加算で下位の桁からの桁上がりを含める加算器のことです。<br>
+X、Y、Zが入力値で、Zを下位の桁からの桁上がりとします。C、Sが出力値の場合、Sはその桁の演算結果の1桁目、Cは次の位への桁上がりとなります。CはX、Y、Zのひとつまたはすべてが1のときに1になります。<br>
+全加算器は2個の半加算器と論理和の回路の組合わせで構成できます。<br>
+<P><IMG src="1-1-1-8-5.JPG" width="500" border="0"></P>
+
+    <script>
+        const buttom = document.getElementById('buttom');
+        const diElements = document.querySelectorAll('.di'); // クラスの要素をすべて取得
+    
+        // マウスホバー時
+        buttom.addEventListener('mouseover', () => {
+            diElements.forEach(di => {
+                di.style.opacity = '1';
+            });
+        }, false);
+    
+        // マウスが離れている時
+        buttom.addEventListener('mouseleave', () => {
+            diElements.forEach(di => {
+                di.style.opacity = '0';
+            });
+        }, false);
+    </script>
+
+</BODY>
+</HTML>
